@@ -735,7 +735,7 @@ app.get('/tickets/:id/threads', function (req, res) {
 var closeMsg = '关闭了 AVOS Cloud 上的工单，如果还有问题请及时联系。';
 function sendClientEmail(ticket, html) {
   var ticketSeq = getTicketId(ticket);
-  var link = 'http://ticket.avosapps.com/tickets/' + ticket.id + '/threads';
+  var link = 'http://atest.avosapps.com/tickets/' + ticket.id + '/threads';
   html = html + "<br/><p>请直接 <a href='" + link + "' target='_blank'>点击这里</a> 进入 AVOS Cloud 技术支持系统回复。</p>" +
     "<p>谢谢，AVOS Cloud Team</p>";
   sendEmail(ticket, "AVOS Cloud 技术支持工单" + ticketSeq + " 更新", html, ticket.get('client_email'));
@@ -1197,7 +1197,7 @@ app.get('/', function (req, res) {
 
 app.get('/google', function (req, res) {
   var content = req.query.content;
-  res.redirect('https://www.google.com.hk/search?q=site%3Ahttps%3A%2F%2Fticket.avosapps.com+' + content);
+  res.redirect('https://www.google.com.hk/search?q=site%3Ahttps%3A%2F%2Fatest.avosapps.com+' + content);
 });
 
 app.get('/requestEmailVerify', function (req, res) {
